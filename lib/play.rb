@@ -7,22 +7,6 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def input_to_index(user_input)
-  user_input.to_i - 1
-end
-
-def move(board, index, current_player = "X")
-  board[index] = current_player
-end
-
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
-
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
-end
-
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -36,5 +20,9 @@ def turn(board)
 end
     
 def play(board)
-  
+i = 0
+while i < 9
+  i += 1
+  turn(board)
+end
 end
